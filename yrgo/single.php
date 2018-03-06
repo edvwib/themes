@@ -4,7 +4,6 @@
 
     <?php while (have_posts()): the_post(); ?>
 
-
       <div class="row">
         <h2 class="col-12">
           <?php the_title(); ?>

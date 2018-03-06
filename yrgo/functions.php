@@ -1,10 +1,7 @@
 <?php
 
-function isActive (string $page) {
-    if (stripos($_SERVER['REQUEST_URI'], $page))
-        return 'active';
-    return '';
-}
+require get_template_directory().'/post-types/employee.php';
+require get_template_directory().'/taxonomies/location.php';
 
 add_action('wp_enqueue_scripts', function () {
     wp_deregister_script('jquery');
@@ -16,3 +13,11 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('jquery');
     wp_enqueue_script('bootstrap');
 });
+
+
+
+function isActive (string $page) {
+    if (stripos($_SERVER['REQUEST_URI'], $page))
+        return 'active';
+    return '';
+}
